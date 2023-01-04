@@ -21,7 +21,7 @@ Technos : HTML - CSS - Symfony - JavaScript (React ?)
 
 ## Concernant Git
 
-Pour les versions GIT, le push se font sur la branche de travail et le merge avec la main branch se fait ensemble. 
+Pour les versions GIT, le push se font sur la branche de travail et le merge avec la main branch se fait avec accord de tous les membres. 
 Le message accompagnant de git commit se doit d'être explicatif des modifications apportées aux fichiers.
 
 Les commandes git à utiliser pour upload du taf sont :
