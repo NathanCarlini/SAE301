@@ -1,0 +1,23 @@
+{
+  "name": "sae301",
+  "version": "1.0.0",
+  "description": "Site dérivé du site officiel de Schecter (https://www.schecterguitars.com/) et simplifié, 3 catégories de produits (guitares acoustiques, guitares C6 Deluxe & Plus et Basses Riot) contenant chacunes minimum 3 produits.",
+  "main": "index.js",
+  "scripts": {
+    "sass:w": "sass --watch sass/main.scss:css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanCarlini/SAE301.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NathanCarlini/SAE301/issues"
+  },
+  "homepage": "https://github.com/NathanCarlini/SAE301#readme",
+  "devDependencies": {
+    "sass": "^1.57.1"
+  }
+}
