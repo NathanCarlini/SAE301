@@ -5,7 +5,7 @@ Site dérivé du site officiel de Schecter (https://www.schecterguitars.com/) et
 
 Fonctionnalités : Map de click &amp; collect, filtres dynamiques d'affichage, 
 
-Technos : HTML - CSS - Symfony - JavaScript (React ?)
+Technos : HTML - SCSS - Symfony - JavaScript (React ?)
 
 
 
@@ -18,6 +18,15 @@ Technos : HTML - CSS - Symfony - JavaScript (React ?)
     - chiffres autorisés
     - excepté pour les variables incrémentales, les noms ne contenant qu'une lettre sont à eviter
     - si besoin de dater, utiliser le format YYYYMMDD et underscore, puis lowerCamelCase, exemple : 20221125_datasetPresentation.docx
+
+### Nomenclature pour la base :
+
+    - Interdiction d'utiliser des underscores et chiffres dans la base, seulement des lettres
+    - nom des tables en majuscules, pas d'underscores
+    - nom des champs en lowerCamelCase français
+    - la clé primaire prend le nom de table en lowerCamelCase précédé de "id". (exemple : table MICROS - nom de la clé idMicros)
+    - pas d'abréviation, nom complets et en français uniquement, pas d'accents ni de ponctuation
+    - base conforme 3nf
 
 ## Concernant Git
 
