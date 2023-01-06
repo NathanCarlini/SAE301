@@ -49,4 +49,86 @@ body {
   gap: 0.5rem;
 }
 
+.card-product {
+  padding: 1rem;
+}
+.card-product__img {
+  border-bottom: 1px solid black;
+}
+.card-product__name {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.card-product__price {
+  font-size: 0.875rem;
+}
+.card-product__price span {
+  color: #E94D29;
+  text-decoration: line-through;
+  margin-right: 1rem;
+}
+
+.card-more {
+  max-width: fit-content;
+  margin: 1rem;
+}
+.card-more__img-container {
+  width: fit-content;
+}
+.card-more__img {
+  max-width: 24rem;
+}
+.card-more__desc {
+  display: flex;
+  justify-content: space-between;
+}
+.card-more__desc__name {
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.card-more__desc__price {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #E94D29;
+}
+
+.btn-blue {
+  margin: 1rem;
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: #04A9F5;
+  border: none;
+  padding: 1rem 2rem;
+}
+.btn-blue:hover {
+  background-color: black;
+  cursor: pointer;
+}
+.btn-blue:active {
+  background-color: #E94D29;
+}
+
+.btn-white {
+  text-transform: uppercase;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border: none;
+  padding: 1rem 2rem;
+  background-color: white;
+  border: 1px solid black;
+}
+.btn-white:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.star:hover {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,24 @@
+.card-more{
+    max-width: fit-content;
+    margin: 1rem;
+    &__img-container{
+        width: fit-content;
+    }
+    &__img{
+        max-width: 24rem;
+    }
+    &__desc{
+        display: flex;
+        justify-content: space-between;
+        &__name{
+            font-size: 2rem;
+            font-weight: 600;
+            text-transform: uppercase ;
+        }
+        &__price{
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #E94D29;
+        }
+    }
+}

@@ -1,3 +1,18 @@
 .card-product{
-    
+    padding: 1rem;
+    &__img{
+        border-bottom: 1px solid black;
+    }
+    &__name{
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    &__price{
+        font-size: 0.875rem;
+        & span{
+            color: #E94D29;
+            text-decoration: line-through;
+            margin-right: 1rem;
+        }
+    }
 }
