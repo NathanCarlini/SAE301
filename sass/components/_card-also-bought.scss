@@ -1,0 +1,28 @@
+.card-also-bought{
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 25.5rem;
+    width: 33.5rem;
+    &__img{
+        transform: rotate(-90deg);
+        object-fit: contain;
+        height: 9.5rem;
+        width: 20rem;
+        object-position: center bottom;
+    }
+    &__desc{
+        &__name{
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+        &__price{
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: red;
+            margin-bottom: 3rem;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+@use '../abstracts/variables' as *;
+
+:root {
+    @each $key, $value in $colors {
+        --clr-#{$key}: #{$value};
+    }
+    @each $key, $value in $font-family {
+        --ff-#{$key}: #{$value};
+    }
+}

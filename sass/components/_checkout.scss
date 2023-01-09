@@ -1,0 +1,90 @@
+.checkout{
+    padding: 3rem 5rem;
+    &__header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid var(--clr-black);
+        &__title{
+            font-size: 1.73rem;
+            font-weight: 400;
+            margin-bottom: .5rem;
+            text-transform: uppercase;
+        }
+        &__list{
+            display: flex;
+            gap: 2rem;
+            margin-bottom: .5rem;
+        }
+        &__item{
+            list-style-type: decimal;
+            font-size: 1.067rem;
+            color: var(--clr-grey);
+            &.active{
+                font-weight: 600;
+                color: var(--clr-black);
+            }
+        }
+    }
+    &__container{
+        margin-top: 3rem;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+    }
+    &__subtitle1{
+        text-transform: uppercase;
+        text-align: center;
+        padding-bottom: 1rem;
+        color: var(--clr-grey);
+        font-size: 1.47rem;
+        font-weight: 400;
+        border-bottom: 1px solid var(--clr-black);
+        grid-column: 1/4;
+    }
+    &__subtitle2{
+        text-transform: uppercase;
+        text-align: center;
+        padding-bottom: 1rem;
+        color: var(--clr-grey);
+        font-size: 1.47rem;
+        font-weight: 400;
+        border-bottom: 1px solid var(--clr-black);
+        grid-column: 4/6;
+    }
+    &__form{
+        grid-column: 1/4;
+        &__item{
+            margin-bottom: 1rem;
+            & label{
+                font-size: 1.2rem;
+                color: var(--clr-grey);
+                
+            }
+            & input{
+                margin-top: .25rem;
+                padding: .25rem;
+                &::placeholder{
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    &__summary{
+        grid-column: 4/6;
+        &__item{
+            font-size: 0.875rem;
+            color: var(--clr-grey);
+            &.subtotal{
+                text-transform: uppercase;
+            }
+            & span{
+                float: right;
+            }
+            &.total{
+                font-weight: 600;
+                color: var(--clr-black);
+            }
+        }
+    }
+}

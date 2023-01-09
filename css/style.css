@@ -14,8 +14,20 @@ a:visited {
   color: inherit;
 }
 
+:root {
+  --clr-light: #fff;
+  --clr-grey: #666;
+  --clr-dark-grey: #333;
+  --clr-dark-blue: #222426;
+  --clr-dark: #060606;
+  --clr-black: #000;
+  --clr-blue: #04A9F5;
+  --clr-orange: #e94d29;
+  --ff-sans: 'Hind Vadodara', sans-serif;
+}
+
 body {
-  font-family: "Hind Vadodara", sans-serif;
+  font-family: var(--ff-sans);
 }
 
 .header {
@@ -68,6 +80,33 @@ body {
   margin-right: 1rem;
 }
 
+.card-also-bought {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 25.5rem;
+  width: 33.5rem;
+}
+.card-also-bought__img {
+  transform: rotate(-90deg);
+  object-fit: contain;
+  height: 9.5rem;
+  width: 20rem;
+  object-position: center bottom;
+}
+.card-also-bought__desc__name {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.card-also-bought__desc__price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: red;
+  margin-bottom: 3rem;
+}
+
 .card-more {
   max-width: fit-content;
   margin: 1rem;
@@ -93,8 +132,97 @@ body {
   color: #E94D29;
 }
 
+.checkout {
+  padding: 3rem 5rem;
+}
+.checkout__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid var(--clr-black);
+}
+.checkout__header__title {
+  font-size: 1.73rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+.checkout__header__list {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 0.5rem;
+}
+.checkout__header__item {
+  list-style-type: decimal;
+  font-size: 1.067rem;
+  color: var(--clr-grey);
+}
+.checkout__header__item.active {
+  font-weight: 600;
+  color: var(--clr-black);
+}
+.checkout__container {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+.checkout__subtitle1 {
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 1rem;
+  color: var(--clr-grey);
+  font-size: 1.47rem;
+  font-weight: 400;
+  border-bottom: 1px solid var(--clr-black);
+  grid-column: 1/4;
+}
+.checkout__subtitle2 {
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 1rem;
+  color: var(--clr-grey);
+  font-size: 1.47rem;
+  font-weight: 400;
+  border-bottom: 1px solid var(--clr-black);
+  grid-column: 4/6;
+}
+.checkout__form {
+  grid-column: 1/4;
+}
+.checkout__form__item {
+  margin-bottom: 1rem;
+}
+.checkout__form__item label {
+  font-size: 1.2rem;
+  color: var(--clr-grey);
+}
+.checkout__form__item input {
+  margin-top: 0.25rem;
+  padding: 0.25rem;
+}
+.checkout__form__item input::placeholder {
+  font-weight: 600;
+}
+.checkout__summary {
+  grid-column: 4/6;
+}
+.checkout__summary__item {
+  font-size: 0.875rem;
+  color: var(--clr-grey);
+}
+.checkout__summary__item.subtotal {
+  text-transform: uppercase;
+}
+.checkout__summary__item span {
+  float: right;
+}
+.checkout__summary__item.total {
+  font-weight: 600;
+  color: var(--clr-black);
+}
+
 .btn-blue {
-  margin: 1rem;
   text-transform: uppercase;
   color: white;
   font-size: 1.2rem;
