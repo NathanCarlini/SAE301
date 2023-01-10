@@ -309,4 +309,39 @@ body {
   cursor: pointer;
 }
 
+.clickandcollect {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.clickandcollect__info {
+  max-width: 40rem;
+  margin: 2rem;
+}
+.clickandcollect__info__title {
+  font-size: 2.25rem;
+  text-align: center;
+  border-bottom: 1px solid var(--clr-black);
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+.clickandcollect__info__dispo {
+  border-bottom: 1px solid var(--clr-black);
+  margin-bottom: 2rem;
+  color: var(--clr-grey);
+}
+.clickandcollect__info__dispo__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.clickandcollect__info__dispo__adresse {
+  font-size: 1.25rem;
+}
+.clickandcollect__info__dispo__adresse span {
+  float: right;
+  color: var(--clr-black);
+}
+.clickandcollect__info__dispo__text {
+  margin-bottom: 1rem;
+}
+
 /*# sourceMappingURL=style.css.map */
