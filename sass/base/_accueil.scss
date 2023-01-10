@@ -1,0 +1,17 @@
+.accueil{
+    width: 100vw;
+    height: 90vh;
+    background-image: url("../assets/bg-accueil.png");
+    background-size: cover;
+    &__title{
+        color: var(--clr-light);
+        font-size: 4rem;
+        text-align: center;
+        padding: 5rem 0 7rem 0;
+    }
+    &__container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}

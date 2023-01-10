@@ -3,3 +3,9 @@
 body{
     font-family: var(--ff-sans);
 }
+
+.iteration-1-container{
+    display: grid;
+    padding: 1rem 2rem;
+    grid-template-columns: repeat(3, 1fr);
+}
