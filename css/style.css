@@ -87,8 +87,10 @@ body {
 
 .card-product {
   padding: 1rem;
+  text-align: center;
 }
 .card-product__img {
+  max-width: 22.5rem;
   border-bottom: 1px solid black;
 }
 .card-product__name {

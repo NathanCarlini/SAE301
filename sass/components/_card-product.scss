@@ -1,6 +1,8 @@
 .card-product{
     padding: 1rem;
+    text-align: center;
     &__img{
+        max-width: 22.5rem;
         border-bottom: 1px solid black;
     }
     &__name{
