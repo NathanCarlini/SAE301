@@ -164,9 +164,15 @@ body {
   margin: 1rem;
 }
 .card-more__img-container {
-  width: fit-content;
+  width: 22.5rem;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #D9D9D9;
 }
 .card-more__img {
+  transform: rotate(-45deg);
   max-width: 24rem;
 }
 .card-more__desc {
