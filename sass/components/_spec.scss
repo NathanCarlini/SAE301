@@ -1,0 +1,27 @@
+.spec-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    gap: 5rem;
+    padding: 0 10rem;
+    height: 100vh;
+}
+
+.spec{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top: 1px solid var(--clr-black);
+    border-bottom: 1px solid var(--clr-black);
+    height: 3rem;
+    &__logo{
+        width: 2.25rem;
+        aspect-ratio: 1/1;
+        margin-right: 1rem;
+    }
+    &__name{
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}
