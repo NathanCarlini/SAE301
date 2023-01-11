@@ -1,0 +1,63 @@
+sélectionner les acoustiques :
+SELECT nom,prix FROM `instrument` INNER JOIN `gamme` USING (idgamme) WHERE gamme.libelle = 'Acoustics' OR gamme.libelle = 'Synyster Gates'; 
+
+sélectionner les C6 :
+SELECT nom,prix FROM `instrument` INNER JOIN `gamme` USING (idgamme) WHERE gamme.libelle = 'C6 Deluxe' OR gamme.libelle = 'C-6 Plus' OR gamme.libelle = 'C7 Deluxe' OR gamme.libelle = 'C8 Deluxe'; 
+
+sélectionner les basses :
+SELECT nom,prix FROM `instrument` INNER JOIN `gamme` USING (idgamme) WHERE gamme.libelle = 'Riot Series'; 
+
+
+
+SELECT libelle FROM couleur
+INNER JOIN liencouleurinstrument USING (idCouleur)
+WHERE liencouleurinstrument.idInstrument = 'iddechaqueelement'
+; 
+
+
+SELECT nomImageInstrument FROM `liencouleurinstrument` 
+INNER JOIN instrument USING (idInstrument) 
+LEFT JOIN gamme USING (idgamme) 
+WHERE gamme.libelle = 'C-6 Plus' 
+OR gamme.libelle = 'C6 Deluxe' 
+OR gamme.libelle = 'C7 Deluxe' 
+OR gamme.libelle = 'C8 Deluxe' 
+ORDER BY instrument.idInstrument
+
+
+localhost/carlini1/liencouleurinstrument/		https://mmi.unilim.fr/ma/index.php?route=/table/sql&db=carlini1&table=instrument
+
+   Showing rows 0 -  3 (4 total, Query took 0.0007 seconds.)
+
+
+SELECT nomImageInstrument FROM `liencouleurinstrument` 
+INNER JOIN instrument USING (idInstrument) 
+LEFT JOIN gamme USING (idgamme) 
+WHERE gamme.libelle = 'C-6 Plus' 
+OR gamme.libelle = 'C6 Deluxe' 
+OR gamme.libelle = 'C7 Deluxe' 
+OR gamme.libelle = 'C8 Deluxe' 
+GROUP BY gamme.libelle;
+
+SELECT nomImageInstrument, GROUP_CONCAT(nomImageInstrument)
+FROM liencouleurinstrument
+INNER JOIN instrument USING (idInstrument) 
+LEFT JOIN gamme USING (idgamme) 
+WHERE gamme.libelle = 'C-6 Plus';
+
+SELECT instrument.*, GROUP_CONCAT(nomImageInstrument)
+FROM liencouleurinstrument
+INNER JOIN instrument USING (idInstrument) 
+LEFT JOIN TypeInstrument USING (idTypeInstrument) 
+WHERE TypeInstrument.libelle = 'Electrique'
+Group BY instrument.nom;
+
+SELECT instrument.*, GROUP_CONCAT(nomImageInstrument)
+FROM liencouleurinstrument
+INNER JOIN instrument USING (idInstrument) 
+LEFT JOIN manualite USING (idManualite) 
+LEFT JOIN TypeInstrument USING (idTypeInstrument) 
+WHERE TypeInstrument.libelle= 'Basse' AND manualite.libelle = 'Gauche'
+GROUP BY instrument.nom;
+
+bg_tokyo night rain cyberpunk
