@@ -8,12 +8,15 @@
 }
 
 .spec{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-top: 1px solid var(--clr-black);
-    border-bottom: 1px solid var(--clr-black);
-    height: 3rem;
+    &__subtitle{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-top: 1px solid var(--clr-black);
+        border-bottom: 1px solid var(--clr-black);
+        height: 3rem;
+
+    }
     &__logo{
         width: 2.25rem;
         aspect-ratio: 1/1;
@@ -38,6 +41,16 @@
         gap: 1rem;
         & hr{
             width: 50%;
+        }
+    }
+    &__options-container{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        padding: 1rem;
+        &__model{
+            font-weight: 700;
+            margin-right: 1rem;
         }
     }
 }
