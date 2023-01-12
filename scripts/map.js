@@ -1,7 +1,7 @@
 let choropleth = document.getElementById("map");
 var map = L.map('map').setView([45.831293, 1.259025], 13);
 
-var point = L.point(200, 300);
+// var point = L.point(200, 300);
 //     .setLatLng([45.831293, 1.259025])
 // var popup = L.popup()
 //     .setLatLng([51.513, -0.09])
