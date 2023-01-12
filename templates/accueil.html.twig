@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schecter - SAE301</title>
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+</head>
+<body>
+
+    <!-- Header -->
+        <header class="header">
+            <div class="header__logo-container">
+                <img src="{{asset('images/logo-schecter.png')}}" alt="logo-schecter" class="header__logo">
+            </div>
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="/Basse">Basse</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="/Acoustiques">Acoustiques</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="/Electrique">C-6 & Plus</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__menu">
+                <img src="{{asset('images/cart.svg')}}" alt="button-cart">
+                <img src="{{asset('images/profil.svg')}}" alt="button-profil">
+                <img src="{{asset('images/search.svg')}}" alt="button-search">
+            </div>
+        </header>
+    <div class="accueil" style="background-image:url('{{ asset('images/bg-accueil.png') }}');background-size: cover;background-color:black;">
+    <h1 class="accueil__title">Heavy, the way it's meant <br>
+                to be played</h1>
+            <div class="accueil__container">
+                <a href="/Basse">
+                    <figure class="card-categorie basse">
+                        
+                            <img src="{{asset('images/categorie-basse.png')}}" alt="image-basse" class="card-categorie__img">
+                            <figcaption class="card-categorie__figcaption">
+                                <h2 class="card-categorie__title">Basse</h2>
+                            </figcaption>
+                       
+                    </figure>
+                 </a>
+                <a href="/Electrique">
+                    <figure class="card-categorie c6">
+                        
+                            <img src="{{asset('images/categorie-c6.png')}}" alt="image-c6" class="card-categorie__img">
+                            <figcaption class="card-categorie__figcaption">
+                                <h2 class="card-categorie__title">C-6 Deluxe <br> &
+                                        plus</h2>
+                            </figcaption>
+                       
+                    </figure>
+                </a>
+                <a href="/Acoustique">
+                    <figure class="card-categorie acoustic" >
+                        
+                            <img src="{{asset('images/categorie-acou.png')}}" alt="image-acou" class="card-categorie__img">
+                            <figcaption class="card-categorie__figcaption">
+                                <h2 class="card-categorie__title">Acoustiques</h2>
+                            </figcaption>
+                        
+                    </figure>
+                </a>
+                
+    </div>
+</div>
+        
+</body>
+</html>

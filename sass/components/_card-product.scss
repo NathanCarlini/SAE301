@@ -1,9 +1,13 @@
 .card-product{
     padding: 1rem;
-    text-align: center;
     &__img{
         max-width: 22.5rem;
         border-bottom: 1px solid black;
+    }
+    &__desc-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
     &__name{
         text-transform: uppercase;
@@ -16,5 +20,15 @@
             text-decoration: line-through;
             margin-right: 1rem;
         }
+    }
+    &__color-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: .5rem;
+    }
+    &__color{
+        width: 30px;
+        aspect-ratio: 1/1;
     }
 }
