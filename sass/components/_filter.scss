@@ -1,0 +1,19 @@
+.filter{
+    display: flex;
+    padding: .5rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 6.75rem;
+    background-color: var(--clr-black);
+    &__title{
+        color: var(--clr-light);
+        font-weight: 700;
+    }
+    &__img{
+        max-width: 2.25rem;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
