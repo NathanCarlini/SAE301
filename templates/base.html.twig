@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schecter - SAE301</title>
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+</head>
+<body>
+    
+
+    <!-- Header -->
+        <header class="header">
+            <div class="header__logo-container">
+                <img src="{{asset('images/logo-schecter.png')}}" alt="logo-schecter" class="header__logo">
+            </div>
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="/Basse">Basse</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="/Acoustique">Acoustique</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="/Electrique">C-6 & Plus</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__menu">
+                <img src="{{asset('images/cart.svg')}}" alt="button-cart">
+                <img src="{{asset('images/profil.svg')}}" alt="button-profil">
+                <img src="{{asset('images/search.svg')}}" alt="button-search">
+            </div>
+        </header>
+        <div id="dropdown">
+            <div class="filter">
+                <p class="filter__title">Filter</p>
+                <img src="assets/logo-filter.png" alt="logo-filter" class="filter__img">
+            </div>
+            <div class="dropdown">
+                <div class="dropdown__category">
+                    <h3 class="dropdown__category__title">Color</h3>
+                    <hr>
+                    <ul class="dropdown__category__list">
+                        {% block color %}
+                            {{include(color)}}
+                        {% endblock %}
+                    </ul>
+                </div>
+                <div class="dropdown__category">
+                    <h3 class="dropdown__category__title">Gamme</h3>
+                    <hr>
+                    <ul class="dropdown__category__list">
+                        {% block gamme %}
+                            {{include(gamme)}}
+                        {% endblock %}
+                    </ul>
+                </div>
+                <div class="dropdown__category">
+                    <h3 class="dropdown__category__title">Dexterity</h3>
+                    <hr>
+                    <ul class="dropdown__category__list">
+                        {{include(hand)}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Template du produit dans la page catégorie -->
+                {% block categorie %}
+                {{include(templates)}}
+                {% endblock %}
+
+        <script src="{{asset('js/script.js')}}></script>
+</body>
+</html>
