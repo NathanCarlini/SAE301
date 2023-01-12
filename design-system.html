@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schecter - SAE301</title>
     <link rel="stylesheet" href="css/style.css">
+
+
+    <link rel="stylesheet" href="./scripts/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
 </head>
 <body>
     
@@ -65,7 +76,7 @@
             </div>
         </div> -->
 
-        <!-- Page Produit -->
+        <!-- Page Produit
         <div class="page-product">
             <div class="page-product__left-container">
                 <img src="assets/guitare-ex.png" alt="image-guitare" class="page-product__left-container__main-image">
@@ -130,7 +141,7 @@
                 <img src="assets/specs-accessories.png" alt="logo-spec" class="spec__logo">
                 <p class="spec__name">Accesories</p>
             </div>
-        </div>
+        </div> -->
 
 
         <!-- Template du produit dans la page catégorie -->
@@ -342,7 +353,7 @@
         </div> -->
 
         <!-- Page Click and Collect -->
-        <!-- <div class="clickandcollect">
+        <div class="clickandcollect">
             <div class="clickandcollect__info">
                 <h1 class="clickandcollect__info__title">Search a retailer</h1>
                 <div class="clickandcollect__info__dispo-container">
@@ -363,10 +374,18 @@
                     </div>
                 </div>
             </div>
-            <div class="clickandcollect__map">
+            <div class="clickandcollect__map"  id="map">
+
+                    <script src="scripts/map.js" type='module'></script>
+
+                    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+                    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+                    crossorigin=""></script>
+                    <!-- <script src="scripts/pinpoints.json" type="application/json"></script> -->
+
 
             </div>
-        </div> -->
+        </div>
 
 </body>
 </html>
