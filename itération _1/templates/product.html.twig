@@ -1,0 +1,17 @@
+<div class="iteration-1-container">
+
+    {% for guitar in liste %}
+        <figure class="card-product">
+           
+                <div class="card-product__container-img">
+                    <img src="{{guitar.pict}}" alt="{{guitar.name}}" class="card-product__img">
+                </div>
+                <figcaption class="card-product__desc-container">
+                    <div class="card-product__text-container">
+                        <p class="card-product__name">{{guitar.name}}</p>
+                        <p class="card-product__price"><span>{{guitar.price}}.00 $</span>{{guitar.price}}.00 $</p>
+                    </div>
+                </figcaption>
+            </figure>
+    {% endfor %}
+</div>
