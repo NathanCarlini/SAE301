@@ -501,19 +501,19 @@
     </div>
 
         <!-- Filtre -->
-        <!-- <div id="dropdown">
+        <div id="dropdown">
             <div class="filter">
                 <p class="filter__title">Filter</p>
                 <img src="assets/logo-filter.png" alt="logo-filter" class="filter__img">
             </div>
-            <form class="dropdown" method="get">
+            <form class="dropdown" method="GET">
                 <div class="dropdown__category">
                     <h3 class="dropdown__category__title">Color</h3>
                     <hr>
                     <ul class="dropdown__category__list" id="dropdown__category__list">
-                        <li class="dropdown__category__item" id='tata'>
-                            <input type="checkbox" name="name-color" id="checkbox" onchange="checking(this)">
-                            <label for="name-color" id="zeub">name-color</label>
+                        <li class="dropdown__category__item"      name="{{libelle}}"      id='{{idcouleur}}'>
+                            <input type="checkbox" name="{{libelle}}" id="checkbox" onchange="checking(this)">
+                            <label for="name-color" id="zeub">{{libelle}}</label>
                         </li>
                     </ul>
                 </div>
@@ -522,8 +522,8 @@
                     <hr>
                     <ul class="dropdown__category__list">
                         <li class="dropdown__category__item">
-                            <input type="checkbox" name="name-gamme" id="checkbox" onchange="checking(this)">
-                            <label for="name-gamme">name-gamme</label>
+                            <input type="checkbox"  name="name-gamme" id="checkbox" onchange="checking(this)">
+                            <label for="name-gamme" value ='dsf'>name-gamme</label>
                         </li>
                     </ul>
                 </div>
@@ -537,9 +537,9 @@
                         </li>
                     </ul>
                 </div>
-                <input type="submit" value="bz">
+                <input type="submit" value="Filtrer">
             </form>
-        </div> -->
+        </div>
 
         <!-- Page panier -->
         <div class="page-cart">
