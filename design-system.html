@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schecter - SAE301</title>
     <link rel="stylesheet" href="css/style.css">
+
+
+    <link rel="stylesheet" href="./scripts/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
 </head>
+
 <body>
-    
+
 
     <!-- Header -->
-        <header class="header">
+<header class="header">
             <div class="header__logo-container">
                 <img src="assets/logo-schecter.png" alt="logo-schecter" class="header__logo">
             </div>
@@ -37,9 +48,10 @@
                 <img src="assets/search.svg" alt="button-search">
             </div>
         </header>
+        </header>
 
-        <!-- Page d'accueil -->
-        <!-- <div class="accueil">
+    <!-- Page d'accueil -->
+    <!-- <div class="accueil">
             <h1 class="accueil__title">Heavy, the way it's meant <br>
                 to be played</h1>
             <div class="accueil__container">
@@ -66,7 +78,7 @@
         </div> -->
 
         <!-- Page Produit -->
-        <div class="page-product">
+        <!-- <div class="page-product">
             <div class="page-product__left-container">
                 <img src="assets/guitare-ex.png" alt="image-guitare" class="page-product__left-container__main-image">
                 <div class="page-product__left-container__images-container">
@@ -218,8 +230,8 @@
             </figure>
         </div> -->
 
-        <!-- Les boutons -->
-        <!-- <button class="btn-blue">Bouton</button>
+    <!-- Les boutons -->
+    <!-- <button class="btn-blue">Bouton</button>
         <button class="btn-white">Bouton</button> -->
 
         <!-- Template produit more -->
@@ -311,8 +323,8 @@
             </figure>
         </div> -->
 
-        <!-- Template du produit aussi acheté dans le panier -->
-        <!-- <figure class="card-also-bought">            
+    <!-- Template du produit aussi acheté dans le panier -->
+    <!-- <figure class="card-also-bought">            
             <img src="assets/guitare-ex.png" alt="image-guitare" class="card-also-bought__img">
             <figcaption class="card-also-bought_desc">
                 <div class="star-container">
@@ -338,8 +350,8 @@
             </figcaption>
         </figure> -->
 
-        <!-- Page du formulaire d'informations à remplir -->
-        <!-- <div class="checkout">
+    <!-- Page du formulaire d'informations à remplir -->
+    <!-- <div class="checkout">
             <div class="checkout__header">
                 <h1 class="checkout__header__title">Checkout</h1>
                 <ul class="checkout__header__list">
@@ -390,8 +402,8 @@
             </div>
         </div> -->
 
-        <!-- Page du formulaire d'informations bancaires à remplir  -->
-        <!-- <div class="checkout">
+    <!-- Page du formulaire d'informations bancaires à remplir  -->
+    <!-- <div class="checkout">
             <div class="checkout__header">
                 <h1 class="checkout__header__title">Checkout</h1>
                 <ul class="checkout__header__list">
@@ -437,32 +449,45 @@
             </div>
         </div> -->
 
-        <!-- Page Click and Collect -->
-        <!-- <div class="clickandcollect">
-            <div class="clickandcollect__info">
-                <h1 class="clickandcollect__info__title">Search a retailer</h1>
-                <div class="clickandcollect__info__dispo-container">
-                    <div class="clickandcollect__info__dispo">
-                        <h2 class="clickandcollect__info__dispo__title">Exemple1</h2>
-                        <p class="clickandcollect__info__dispo__adresse">adresse<span>dispo</span></p>
-                        <p class="clickandcollect__info__dispo__text">Cet exemple est un magasin de musique situé je sais pas trop où et qui se spécialise dans la vente de poulets rotis à emporter, de chaise pliantes et de guitares fretless 8 cordes multiscale</p>
-                    </div>
-                    <div class="clickandcollect__info__dispo">
-                        <h2 class="clickandcollect__info__dispo__title">Exemple2</h2>
-                        <p class="clickandcollect__info__dispo__adresse">adresse<span>dispo</span></p>
-                        <p class="clickandcollect__info__dispo__text">Cet exemple est un magasin de musique situé je sais pas trop où et qui se spécialise dans la vente de poulets rotis à emporter, de chaise pliantes et de guitares fretless 8 cordes multiscale</p>
-                    </div>
-                    <div class="clickandcollect__info__dispo">
-                        <h2 class="clickandcollect__info__dispo__title">Exemple3</h2>
-                        <p class="clickandcollect__info__dispo__adresse">adresse<span>dispo</span></p>
-                        <p class="clickandcollect__info__dispo__text">Cet exemple est un magasin de musique situé je sais pas trop où et qui se spécialise dans la vente de poulets rotis à emporter, de chaise pliantes et de guitares fretless 8 cordes multiscale</p>
-                    </div>
+    <!-- Page Click and Collect -->
+    <div class="clickandcollect">
+        <div class="clickandcollect__info">
+            <h1 class="clickandcollect__info__title" id="toto">Search a retailer</h1>
+            <div class="clickandcollect__info__dispo-container">
+                <div class="clickandcollect__info__dispo">
+                    <h2 class="clickandcollect__info__dispo__title">Exemple1</h2>
+                    <p class="clickandcollect__info__dispo__adresse">adresse<span>dispo</span></p>
+                    <p class="clickandcollect__info__dispo__text">Cet exemple est un magasin de musique situé je sais
+                        pas trop où et qui se spécialise dans la vente de poulets rotis à emporter, de chaise pliantes
+                        et de guitares fretless 8 cordes multiscale</p>
+                </div>
+                <div class="clickandcollect__info__dispo">
+                    <h2 class="clickandcollect__info__dispo__title">Exemple2</h2>
+                    <p class="clickandcollect__info__dispo__adresse">adresse<span>dispo</span></p>
+                    <p class="clickandcollect__info__dispo__text">Cet exemple est un magasin de musique situé je sais
+                        pas trop où et qui se spécialise dans la vente de poulets rotis à emporter, de chaise pliantes
+                        et de guitares fretless 8 cordes multiscale</p>
+                </div>
+                <div class="clickandcollect__info__dispo">
+                    <h2 class="clickandcollect__info__dispo__title">Exemple3</h2>
+                    <p class="clickandcollect__info__dispo__adresse">adresse<span>dispo</span></p>
+                    <p class="clickandcollect__info__dispo__text">Cet exemple est un magasin de musique situé je sais
+                        pas trop où et qui se spécialise dans la vente de poulets rotis à emporter, de chaise pliantes
+                        et de guitares fretless 8 cordes multiscale</p>
                 </div>
             </div>
-            <div class="clickandcollect__map">
+        </div>
+        <div class="clickandcollect__map" id="map">
 
-            </div>
-        </div> -->
+            <script src="scripts/map.js" type='module'></script>
+
+            <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+                integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+            <!-- <script src="scripts/pinpoints.json" type="application/json"></script> -->
+
+
+        </div>
+    </div>
 
         <!-- Filtre -->
         <!-- <div id="dropdown">
@@ -470,14 +495,14 @@
                 <p class="filter__title">Filter</p>
                 <img src="assets/logo-filter.png" alt="logo-filter" class="filter__img">
             </div>
-            <div class="dropdown">
+            <form class="dropdown" method="get">
                 <div class="dropdown__category">
                     <h3 class="dropdown__category__title">Color</h3>
                     <hr>
-                    <ul class="dropdown__category__list">
-                        <li class="dropdown__category__item">
-                            <input type="checkbox" name="name-color" id="checkbox">
-                            <label for="name-color">name-color</label>
+                    <ul class="dropdown__category__list" id="dropdown__category__list">
+                        <li class="dropdown__category__item" id='tata'>
+                            <input type="checkbox" name="name-color" id="checkbox" onchange="checking(this)">
+                            <label for="name-color" id="zeub">name-color</label>
                         </li>
                     </ul>
                 </div>
@@ -486,7 +511,7 @@
                     <hr>
                     <ul class="dropdown__category__list">
                         <li class="dropdown__category__item">
-                            <input type="checkbox" name="name-gamme" id="checkbox">
+                            <input type="checkbox" name="name-gamme" id="checkbox" onchange="checking(this)">
                             <label for="name-gamme">name-gamme</label>
                         </li>
                     </ul>
@@ -496,12 +521,13 @@
                     <hr>
                     <ul class="dropdown__category__list">
                         <li class="dropdown__category__item">
-                            <input type="checkbox" name="name-dexterity" id="checkbox">
+                            <input type="checkbox" name="name-dexterity" id="checkbox" onchange="checking(this)">
                             <label for="name-dexterity">name-dexterity</label>
                         </li>
                     </ul>
                 </div>
-            </div>
+                <input type="submit" value="bz">
+            </form>
         </div> -->
 
         <!-- Page panier -->
@@ -645,4 +671,5 @@
         </div> -->
 
 </body>
+    <script src="scripts/script.js"></script>
 </html>
