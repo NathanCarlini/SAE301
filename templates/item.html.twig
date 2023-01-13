@@ -75,7 +75,7 @@
                         <p class="page-product__right-container__price"><span>{{guitar.price}}</span>{{guitar.price}} </p>
                     <div class="page-product__right-container__button-container">
                         <button class="btn-white">Spec</button>
-                        <button class="btn-white">Voir la disponibilité</button>
+                        <button class="btn-white" ><a href="/Disponiblité">Voir la disponibilité</a></button>
                         <button class="btn-blue">Ajouter au panier</button>
                     </div>
                 </div>
@@ -102,6 +102,9 @@
                 <p class="spec__name">Accesories</p>
             </div>
         </div>
+        {% block more %}
+            {{include(more)}}
+        {% endblock %}
         <script src="{{asset('js/script.js')}}></script>
     </body>
     </html>

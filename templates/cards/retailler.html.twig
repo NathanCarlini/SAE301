@@ -1,0 +1,9 @@
+{% for vendeur in liste %}
+    <div class="clickandcollect__info__dispo">
+        <a href="/CheckOut">
+                <h2 class="clickandcollect__info__dispo__title">{{vendeur.name}}</h2>
+                <p class="clickandcollect__info__dispo__adresse">{{vendeur.adresse}} {{vendeur.codePostal}}<span>dispo</span></p>
+                <p class="clickandcollect__info__dispo__text">{{vendeur.description}}</p>
+        </a>
+    </div>
+{% endfor %}
