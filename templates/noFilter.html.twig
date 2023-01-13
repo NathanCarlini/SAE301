@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schecter - SAE301</title>
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('scripts/leaflet.css')}}" >
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" >
+
+    
+    
+</head>
+<body>
+    
+
+    <!-- Header -->
+        <header class="header">
+            <div class="header__logo-container">
+                <img src="{{asset('images/logo-schecter.png')}}" alt="logo-schecter" class="header__logo">
+            </div>
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="/Basse">Basse</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="/Acoustique">Acoustique</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="/Electrique">C-6 & Plus</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__menu">
+                <img src="{{asset('images/cart.svg')}}" alt="button-cart">
+                <img src="{{asset('images/profil.svg')}}" alt="button-profil">
+                <img src="{{asset('images/search.svg')}}" alt="button-search">
+            </div>
+        </header>
+        <!-- Template du produit dans la page catégorie -->
+                {% block page %}
+                {{include(templates)}}
+                {% endblock %}
+        <div class="clickandcollect__map" id="map">
+            {% block javascript %} 
+                <script src="scripts/map.js" type='module'></script>
+
+                <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+                    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+                <!-- <script src="scripts/pinpoints.json" type="application/json"></script> -->
+            {% endblock %}
+
+        </div>
+        
+
+</body>
+    
+</html>

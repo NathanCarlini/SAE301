@@ -1,0 +1,49 @@
+<div class="page-cart">
+            <h1 class="page-cart__title">Shopping cart</h1>
+            <div class="page-cart__container">
+                <figure class="card-cart">
+                    <div class="card-cart__img-container">
+                        <img src="assets/guitare-ex.png" alt="image-guitare" class="card-cart__img">
+                    </div>
+                    <figcaption class="card-cart__desc">
+                        <p class="card-cart__desc__name">Nom</p>
+                        <p class="card-cart__desc__ref">Référence</p>
+                        <p class="card-cart__desc__price">Prix <span>Prix</span></p>
+                        <label for="quantity">Quantity: </label> <input type="number" name="quantity" id="quantity">
+                        <div class="card-cart__desc__color-container">
+                            <img src="assets/couleur.png" alt="" class="card-cart__color">
+                        </div>
+                        <div class="card-cart__desc__button-container">
+                            <button class="card-cart__desc__button">Edit</button>
+                            <button class="card-cart__desc__button">Save</button>
+                            <button class="card-cart__desc__button">Remove</button>
+                        </div>
+                    </figcaption>
+                </figure>
+                <div class="page-cart__order-summary">
+                    <h2 class="page-cart__order-summary__title">Order summary</h2>
+                    <div class="page-cart__order-summary__text-container">
+                        <p class="page-cart__order-summary__text-container__subtotal">Subtotal</p>
+                        <p class="page-cart__order-summary__text-container__item">Item</p>
+                        <p class="page-cart__order-summary__text-container__price">Prix</p>
+                    </div>
+                    <button class="btn-blue"><a href="/CheckOut/Info">Delivery</a></button>
+                    <button class="btn-blue"><a href="/Disponiblité">Click & Collect</a></button>
+                    <input type="text" name="promo" id="promo" placeholder="Promotion code">
+                </div>
+            </div>
+            <p class="page-cart__text">They also bought : </p>
+            <div class="page-cart__also-bought">
+                {% block also %}
+                {{include(also)}}
+                {% endblock %}
+            </div>
+            <div class="page-cart__hr">
+                <hr><h2 class="page-cart__hr__title">More</h2><hr>
+            </div>
+            <div class="page-cart__more">
+                {% block more %}
+                {{include(more)}}
+                {% endblock %}
+            </div>
+        </div>

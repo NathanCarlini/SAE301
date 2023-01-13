@@ -17,6 +17,7 @@ use App\Gamme;
 use App\Retailler;
 use App\Model;
 use App\More;
+use App\Spec;
 
 
 class GuitarController extends AbstractController {
@@ -28,30 +29,49 @@ class GuitarController extends AbstractController {
         return $this->render('./accueil.html.twig');
     }
     /**
-     * @Route("/CheckOut"}
+     * @Route("/CheckOut/{id}")
      */
-    public function renderCart():response{
-        return $this->render('./payement.html.twig');
+    public function renderCart($id):response{
+        if ($id=='Info'){
+            $template = './payement/info_payement.html.twig';
+        }
+        else if($id =='Card'){
+            $template ='./payement/card_payement.html.twig';
+        }
+        return $this->render('./noFilter.html.twig',['templates'=>$template]);
     }
     /**
      * @Route("/item/{nom}/{couleur}")
      */
-    public function renderItem(Model $bdd, Model $tb ,$nom,$couleur):response
+    public function renderItem(Model $bdd, Model $tb,Model $spec,$nom,$couleur):response
     {   
+        $info = $spec->getSpec($nom);
         $data = $bdd ->getOneGuitar($nom,$couleur);
         $tab =$tb->getMore();
         $template = './item.html.twig';
         $more = './cards/more.html.twig';
-        return $this->render($template,['liste'=>$data,'more'=>$more,'More'=>$tab]);
+        return $this->render('./noFilter.html.twig',['templates'=>$template,'liste'=>$data,'more'=>$more,'specs'=>$info,'More'=>$tab]);
     }
     /**
      * @Route("/Disponiblité")
      */
     public function renderMap(Model $bdd):response{
         $data = $bdd ->getRetailler();
-        $template = './cards/retailler.html.twig';
-        return $this->render('./map.html.twig',['retailler'=>$template,'liste'=>$data]);
+        $retailler = './cards/retailler.html.twig';
+        $template = './map.html.twig';
+        return $this->render('./noFilter.html.twig',['templates'=>$template,'retailler'=>$retailler,'liste'=>$data]);
     }
+    /**
+     * @Route("/Panier")
+     */
+    public function renderPanier(Model $bdd):response{
+        $data = $bdd->getMore();
+        $template = './payement/cart.html.twig';
+        $also ='./cards/also.html.twig';
+        $more = './cards/more.html.twig';
+        return $this->render('./noFilter.html.twig',['templates'=>$template,'also'=>$also,'more'=>$more,'More'=>$data]);
+    }
+    
     
     
     /**

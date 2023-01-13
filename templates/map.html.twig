@@ -1,42 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schecter - SAE301</title>
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-</head>
-<body>
-    
 
-    <!-- Header -->
-        <header class="header">
-            <div class="header__logo-container">
-                <img src="{{asset('images/logo-schecter.png')}}" alt="logo-schecter" class="header__logo">
-            </div>
-            <nav class="header__nav">
-                <ul class="header__list">
-                    <li class="header__item">
-                        <a href="/">Home</a>
-                    </li>
-                    <li class="header__item">
-                        <a href="/Basse">Basse</a>
-                    </li>
-                    <li class="header__item">
-                        <a href="/Acoustique">Acoustique</a>
-                    </li>
-                    <li class="header__item">
-                        <a href="/Electrique">C-6 & Plus</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="header__menu">
-                <img src="{{asset('images/cart.svg')}}" alt="button-cart">
-                <img src="{{asset('images/profil.svg')}}" alt="button-profil">
-                <img src="{{asset('images/search.svg')}}" alt="button-search">
-            </div>
-        </header>
         <div class="clickandcollect">
             <div class="clickandcollect__info">
                 <h1 class="clickandcollect__info__title">Search a retailer</h1>
@@ -46,10 +8,16 @@
                         {% endblock %}
                 </div>
             </div>
-                <div class="clickandcollect__map">
+                
+                <div class="clickandcollect__map" id="map">
+                    {% block javascript %} 
+                        <script src="scripts/map.js" type='module'></script>
 
-                </div>
-        </div>
-        <script src="{{asset('js/script.js')}}></script>
-</body>
-</html>
+                        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+                            integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+                        <!-- <script src="scripts/pinpoints.json" type="application/json"></script> -->
+                    {% endblock %}
+            </div>
+        
+
+    </div>

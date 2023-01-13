@@ -2,6 +2,7 @@
 namespace App;
 
 class Guitar{
+    private $intrument;
     private $id;
     private $couleur;
     private $name;
@@ -9,13 +10,21 @@ class Guitar{
     private $pict;
     private $price;
 
-    public function __construct($id,$name, $reference, $price, $pict,$couleur){
+    public function __construct($instrument,$id,$name, $reference, $price, $pict,$couleur){
+        $this->instrument=$instrument;
         $this->id=$id;
         $this->name=$name;
         $this->reference=$reference;
         $this->price=$price;
         $this->pict=$pict;
         $this->couleur=$couleur;
+    }
+     /**
+     * Get the value of idInstrument
+     */ 
+    public function getInstrument():string
+    {
+        return $this->Instrument;
     }
 
     /**
@@ -64,4 +73,6 @@ class Guitar{
     {
         return $this->couleur;
     }
+
+   
 }

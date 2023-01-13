@@ -1,0 +1,45 @@
+<div class="checkout">
+            <div class="checkout__header">
+                <h1 class="checkout__header__title">Checkout</h1>
+                <ul class="checkout__header__list">
+                    <li class="checkout__header__item ">Informations</li>
+                    <li class="checkout__header__item active">Payement</li>
+                    <li class="checkout__header__item">Review</li>
+                </ul>
+            </div>
+            <div class="checkout__container">
+                <h2 class="checkout__subtitle1">Buyer Address</h2>
+                <h2 class="checkout__subtitle2">Summary</h2>
+                <form action="" class="checkout__form">
+                    <div class="checkout__form__item">
+                        <label for="card-number">Card Number</label> <br>
+                        <input  type="text" name="card-number" id="card-number">
+                    </div>
+                    <div class="checkout__form__item">
+                        <label for="expiration-date">Expiration Date</label> <br>
+                        <input  type="number" name="expiration-date" id="expiration-date"><span> /</span>
+                        <input  type="number" name="expiration-date" id="expiration-date">
+                    </div>
+                    <div class="checkout__form__item">
+                        <label for="security-code">Security Code</label> <br>
+                        <input  type="text" name="security-code" id="security-code">
+                    </div>
+                    <div class="checkout__form__item">
+                        <label for="card-owner">Card Owner</label> <br>
+                        <input  type="text" name="card-owner" id="card-owner">
+                    </div>
+                    <div class="checkout__img-container">
+                        <img src="{{asset('images/cb.png')}}" alt="image-carte-bancaire" class="checkout__img">
+                        <img src="{{asset('images/maestro.png')}}" alt="image-carte-bancaire" class="checkout__img">
+                        <img src="{{asset('images/mastercard.png')}}" alt="image-carte-bancaire" class="checkout__img">
+                        <img src="{{asset('images/visa.png')}}" alt="image-carte-bancaire" class="checkout__img">
+                    </div>
+                </form>
+                <div class="checkout__summary">
+                    <p class="checkout__summary__item subtotal">Subtotal<span>price</span></p>
+                    <p class="checkout__summary__item">Shipping<span>price</span></p>
+                    <p class="checkout__summary__item">Tax<span>price</span></p>
+                    <p class="checkout__summary__item total">Total<span>price</span></p>
+                </div>
+            </div>
+        </div> 

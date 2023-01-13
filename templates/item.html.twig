@@ -1,41 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schecter - SAE301</title>
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-</head>
-<body>
+
 {% for guitar in liste %}
-    <!-- Header -->
-        <header class="header">
-            <div class="header__logo-container">
-                <img src="{{asset('images/logo-schecter.png')}}" alt="logo-schecter" class="header__logo">
-            </div>
-            <nav class="header__nav">
-                <ul class="header__list">
-                    <li class="header__item">
-                        <a href="/">Home</a>
-                    </li>
-                    <li class="header__item">
-                        <a href="/Basse">Basse</a>
-                    </li>
-                    <li class="header__item">
-                        <a href="/Acoustique">Acoustique</a>
-                    </li>
-                    <li class="header__item">
-                        <a href="/Electrique">C-6 & Plus</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="header__menu">
-                <img src="{{asset('images/cart.svg')}}" alt="button-cart">
-                <img src="{{asset('images/profil.svg')}}" alt="button-profil">
-                <img src="{{asset('images/search.svg')}}" alt="button-search">
-            </div>
-        </header>
+    
         <div class="page-product">
                     <div class="page-product__left-container">
                         <img src="{{guitar.pict}}" alt="{{guitar.name}}" class="page-product__left-container__main-image">
@@ -54,7 +19,7 @@
                         <img src="{{asset('images/couleur.png')}}" alt="" class="page-product__right-container__color">
                     </div>
                         <p class="page-product__right-container__name-color">{{guitar.couleur}}</p>
-                        <p class="page-product__right-container__ref">{{guitar.reference}}</p>
+                        <p class="page-product__right-container__ref">{{guitar.reference}} </p>
                     <div class="star-container">
                         <svg width="32" height="29" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path class="star" d="M16 0L19.5922 11.0557H31.2169L21.8123 17.8885L25.4046 28.9443L16 22.1115L6.59544 28.9443L10.1877 17.8885L0.783095 11.0557H12.4078L16 0Z" fill="#D9D9D9"/>
@@ -74,37 +39,90 @@
                     </div>
                         <p class="page-product__right-container__price"><span>{{guitar.price}}</span>{{guitar.price}} </p>
                     <div class="page-product__right-container__button-container">
-                        <button class="btn-white">Spec</button>
-                        <button class="btn-white" ><a href="/Disponiblité">Voir la disponibilité</a></button>
-                        <button class="btn-blue">Ajouter au panier</button>
+                        <button class="btn-white"><a href="#spec">Spec</a></button>
+                        <button class="btn-white" ><a href="/Disponiblité">Voir la disponibilité</a></button> 
+                        <form action="">
+                            <label id="name-label" for="#name" class="visibility">Nom</label>
+                            <label id="color-label" for="#color" class="visibility">Color</label>
+                            <label id="ref-label" for="#ref" class="visibility">Référence</label>
+                            <submit class="btn-blue">Ajouter au panier</submit>
+                        </form>
                     </div>
                 </div>
             </div>
-            {% endfor %}
-            <div class="spec__hr">
+    {% endfor %}
+        <div class="spec__hr" id="spec">
                 <hr><img src="{{asset('images/spec.png')}}" alt="logo-spec"><h2 class="spec__title">Spec</h2><hr>
             </div>
             <div class="spec-container">
+    
+        {% for spec in specs %}
             <div class="spec">
                 <img src="{{asset('images/specs-neck.png')}}" alt="logo-spec" class="spec__logo">
                 <p class="spec__name">Neck</p>
             </div>
-            <div class="spec">
-                <img src="{{asset('images/specs-body.png')}}" alt="logo-spec" class="spec__logo">
-            <p class="spec__name">Body</p>
-            </div>
-            <div class="spec">
-                <img src="{{asset('images/specs-general.png')}}" alt="logo-spec" class="spec__logo">
-                <p class="spec__name">General</p>
-            </div>
-            <div class="spec">
-                <img src="{{asset('images/specs-accessories.png')}}" alt="logo-spec" class="spec__logo">
-                <p class="spec__name">Accesories</p>
-            </div>
+            
+                <div class="spec">
+                    <img src="{{asset('images/specs-body.png')}}" alt="logo-spec" class="spec__logo">
+                <p class="spec__name">Body</p>
+                <ul>
+                            <li class="spec__options-container">
+                            <p class="spec__options-container__model">Material Name</p>
+                            <p class="spec__options-container__name">{{spec.mC}} {{spec.mat}}</p>
+                        </li>
+                        <li class="spec__options-container">
+                            <p class="spec__options-container__model">Construction</p>
+                            <p class="spec__options-container__name">{{spec.const}}</p>
+                        </li>
+                        <li class="spec__options-container">
+                            <p class="spec__options-container__model">Control Name</p>
+                            <p class="spec__options-container__name">{{spec.ctrl}}</p>
+                        </li>
+                        <li class="spec__options-container">
+                            <p class="spec__options-container__model">Control Number</p>
+                            <p class="spec__options-container__name">{{spec.nbrCtrl}}</p>
+                        </li>
+                        <li class="spec__options-container">
+                            <p class="spec__options-container__model">Tuner Name</p>
+                            <p class="spec__options-container__name">{{spec.tun}}</p>
+                        </li>
+                </ul>
+                </div>
+                <div class="spec">
+                    <img src="{{asset('images/specs-general.png')}}" alt="logo-spec" class="spec__logo">
+                    <p class="spec__name">General</p>
+                    <li class="spec__options-container">
+                            <p class="spec__options-container__model">Model Name</p>
+                            <p class="spec__options-container__name"></p>
+                        </li>
+                </div>
+                <div class="spec">
+                    <img src="{{asset('images/specs-accessories.png')}}" alt="logo-spec" class="spec__logo">
+                    <p class="spec__name">Accesories</p>
+                    <ul >
+                        <li class="spec__options-container">
+                            <p class="spec__options-container__model">Micro Name</p>
+                            <p class="spec__options-container__name">{{spec.mic}}</p>
+                        </li>
+                        <li class="spec__options-container">
+                            <p class="spec__options-container__model">Frette</p>
+                            <p class="spec__options-container__name">{{spec.frette}}</p>
+                        </li>
+                        <li class="spec__options-container">
+                            <p class="spec__options-container__model">Model Name</p>
+                            <p class="spec__options-container__name">Name</p>
+                        </li>
+                    </ul>
+                </div>
+{% endfor %}
+       
+            
         </div>
-        {% block more %}
-            {{include(more)}}
-        {% endblock %}
-        <script src="{{asset('js/script.js')}}></script>
+        <div class="card-more__container">
+            {% block more %}
+                {{include(more)}}
+            {% endblock %}
+        </div>
+        
     </body>
-    </html>
+</html>
