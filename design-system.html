@@ -403,7 +403,7 @@
     <!-- Page Click and Collect -->
     <div class="clickandcollect">
         <div class="clickandcollect__info">
-            <h1 class="clickandcollect__info__title">Search a retailer</h1>
+            <h1 class="clickandcollect__info__title" id="toto">Search a retailer</h1>
             <div class="clickandcollect__info__dispo-container">
                 <div class="clickandcollect__info__dispo">
                     <h2 class="clickandcollect__info__dispo__title">Exemple1</h2>
@@ -446,14 +446,14 @@
                 <p class="filter__title">Filter</p>
                 <img src="assets/logo-filter.png" alt="logo-filter" class="filter__img">
             </div>
-            <div class="dropdown">
+            <form class="dropdown" method="get">
                 <div class="dropdown__category">
                     <h3 class="dropdown__category__title">Color</h3>
                     <hr>
-                    <ul class="dropdown__category__list">
-                        <li class="dropdown__category__item">
-                            <input type="checkbox" name="name-color" id="checkbox">
-                            <label for="name-color">name-color</label>
+                    <ul class="dropdown__category__list" id="dropdown__category__list">
+                        <li class="dropdown__category__item" id='tata'>
+                            <input type="checkbox" name="name-color" id="checkbox" onchange="checking(this)">
+                            <label for="name-color" id="zeub">name-color</label>
                         </li>
                     </ul>
                 </div>
@@ -462,7 +462,7 @@
                     <hr>
                     <ul class="dropdown__category__list">
                         <li class="dropdown__category__item">
-                            <input type="checkbox" name="name-gamme" id="checkbox">
+                            <input type="checkbox" name="name-gamme" id="checkbox" onchange="checking(this)">
                             <label for="name-gamme">name-gamme</label>
                         </li>
                     </ul>
@@ -472,13 +472,14 @@
                     <hr>
                     <ul class="dropdown__category__list">
                         <li class="dropdown__category__item">
-                            <input type="checkbox" name="name-dexterity" id="checkbox">
+                            <input type="checkbox" name="name-dexterity" id="checkbox" onchange="checking(this)">
                             <label for="name-dexterity">name-dexterity</label>
                         </li>
                     </ul>
                 </div>
-            </div>
+                <input type="submit" value="bz">
+            </form>
         </div>
 </body>
-
+    <script src="scripts/script.js"></script>
 </html>
