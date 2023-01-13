@@ -4,7 +4,9 @@ use \PDO;
 use App\AllGuitar;
 use App\Guitar;
 use App\Gamme;
+use App\Retailler;
 use App\Couleur;
+use App\More;
 
 class Model{
    
@@ -17,7 +19,7 @@ class Model{
     public function getGuitarsByType($type){
         $tab = [];
         $this->cnx ->query ('SET CHARACTER SET utf8');
-        $answer = $this->cnx->query("SELECT nom, prix, idgamme, idTypeInstrument,nomImageInstrument ,nomImageInstrument, couleur.libelle FROM liencouleurinstrument INNER JOIN instrument USING (idInstrument) LEFT JOIN TypeInstrument USING (idTypeInstrument) INNER JOIN couleur ON couleur.idCouleur= liencouleurinstrument.idCouleur WHERE TypeInstrument.nomType = '$type' Group BY instrument.nom; ");
+        $answer = $this->cnx->query("SELECT nom, prix, idgamme, idTypeInstrument,nomImageInstrument, couleur.libelle FROM liencouleurinstrument INNER JOIN instrument USING (idInstrument) LEFT JOIN TypeInstrument USING (idTypeInstrument) INNER JOIN couleur ON couleur.idCouleur= liencouleurinstrument.idCouleur WHERE TypeInstrument.nomType = '$type' Group BY instrument.nom; ");
         $res = $answer->fetchALL(PDO::FETCH_OBJ); 
         foreach($res as $value){
             $obj = new AllGuitar(
@@ -49,11 +51,12 @@ class Model{
     public function getGuitarByColor($couleur){
         $tab =[];
         $this->cnx ->query ('SET CHARACTER SET utf8');
-        $answer = $this->cnx->query("SELECT DISTINCT couleur.libelle FROM couleur LEFT JOIN liencouleurinstrument USING (idcouleur) LEFT JOIN instrument USING (idInstrument) LEFT JOIN TypeInstrument USING (idTypeInstrument) WHERE TypeInstrument.nomType= '$couleur'; ");
+        $answer = $this->cnx->query("SELECT DISTINCT couleur.libelle, couleur.idCouleur FROM couleur LEFT JOIN liencouleurinstrument USING (idcouleur) LEFT JOIN instrument USING (idInstrument) LEFT JOIN TypeInstrument USING (idTypeInstrument); ");
         $res = $answer->fetchALL(PDO::FETCH_OBJ); 
         foreach($res as $value){
             $obj = new Couleur(
-                $value->libelle
+                $value->libelle,
+                $value->id
             );
             array_push($tab,$obj);
         }
@@ -77,5 +80,40 @@ class Model{
         }
         return $tab;
     }
+    public function getRetailler(){
+        $tab=[];
+        $this->cnx ->query ('SET CHARACTER SET utf8');
+        $answer = $this->cnx->query("SELECT * FROM `magasin` ");
+        $res = $answer->fetchALL(PDO::FETCH_OBJ); 
+        foreach($res as $value){
+            $obj = new Retailler(
+                $value->nom,
+                $value->adresse,
+                $value->codePostal,
+                $value->description,
+
+            );
+            array_push($tab,$obj);
+        }
+        return $tab;
+    }
+    public function getMore(){
+        $tab=[];
+        $this->cnx ->query ('SET CHARACTER SET utf8');
+        $answer = $this->cnx->query("SELECT nom, prix, nomImageInstrument, couleur.libelle FROM liencouleurinstrument INNER JOIN instrument USING (idInstrument) LEFT JOIN TypeInstrument USING (idTypeInstrument) INNER JOIN couleur ON couleur.idCouleur= liencouleurinstrument.idCouleur ORDER BY RAND() LIMIT 3; ");
+        $res = $answer->fetchALL(PDO::FETCH_OBJ); 
+        foreach($res as $value){
+            $obj = new More(
+                $value->nom,
+                $value->prix,
+                $value->nomImageInstrument,
+                $value->libelle,
+
+            );
+            array_push($tab,$obj);
+        }
+        return $tab;
+    }
+
+    }
     
-}
